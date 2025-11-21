@@ -1,0 +1,10 @@
+title: 朝霞キャンパス 学生ポータル
+description: 東洋大学 朝霞キャンパス 生命科学部・食環境科学部 学生用ポータルサイト
+baseurl: "/asaka-portal" # GitHub Pagesのリポジトリ名に合わせて変更
+url: "https://yuhei-tsujimoto.github.io" # ユーザー名に合わせて変更
+
+markdown: kramdown
+theme: minima # 一旦デフォルトテーマを指定しておきますが、後でカスタムCSSで上書きします
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
