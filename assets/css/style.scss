@@ -1,0 +1,78 @@
+--- --- // カラー変数のオーバーライド
+$body-background-color: #f8f9fa; // 非常に薄いグレー
+$content-width: 900px;
+
+// ナビゲーション
+$nav-width: 280px;
+$nav-background-color: #343a40; // ダークグレー
+$nav-text-color: #ced4da;
+$nav-search-background-color: #495057;
+$nav-search-text-color: #fff;
+
+// リンク色
+$link-color: #495057; // 落ち着いたグレー
+$link-color-visited: #495057;
+$link-color-hover: #000;
+
+// 見出し
+$heading-color: #343a40;
+
+@import "just-the-docs";
+
+// 追加のカスタムスタイル
+.site-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.site-title {
+    color: #343a40 !important;
+    font-weight: 700;
+}
+
+// カードスタイルの調整（トップページ用）
+.portal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.portal-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+    transition: all 0.2s ease;
+    display: block;
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.portal-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-color: #ced4da;
+}
+
+.portal-card h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #343a40;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.portal-card p {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.portal-card ul {
+    margin-top: 15px;
+    padding-left: 20px;
+    color: #495057;
+}
