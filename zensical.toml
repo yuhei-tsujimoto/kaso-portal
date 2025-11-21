@@ -5,7 +5,7 @@
 [project]
 
 # サイト名（ブラウザタブとページヘッダーに表示）
-site_name = "Asaka Portal"
+site_name = "Asaka Campus Portal"
 
 # サイト説明（HTML の head に含まれ、検索エンジンが表示）
 site_description = "東洋大学朝霞キャンパスの学生向けポータルサイト - 学生生活に必要な情報をまとめています"
