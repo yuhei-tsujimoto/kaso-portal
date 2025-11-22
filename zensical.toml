@@ -103,6 +103,10 @@ toggle.name = "ライトモードに切り替え"
 [project.extra]
 generator = false
 
+# 追加のCSSファイル
+[[project.extra_css]]
+path = "stylesheets/custom.css"
+
 # 追加のJavaScriptファイル
 [[project.extra_javascript]]
 path = "javascripts/header-link.js"

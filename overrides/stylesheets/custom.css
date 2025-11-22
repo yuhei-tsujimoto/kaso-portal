@@ -1,0 +1,115 @@
+/* ============================================================================
+ * Asaka Portal カスタムカラースキーム
+ * ============================================================================
+ * ライトモード：柔らかいベージュ系の背景
+ * ダークモード：深みのあるダークブルーグレー
+ * ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+ * ライトモード - 柔らかいニュートラルカラー
+ * ---------------------------------------------------------------------------- */
+[data-md-color-scheme="default"] {
+  /* 背景色 - 柔らかいベージュグレー */
+  --md-default-bg-color: #f5f5f0;
+  --md-default-bg-color--light: #fafaf8;
+  --md-default-bg-color--lighter: #fcfcfb;
+  --md-default-bg-color--lightest: #fefefe;
+
+  /* テキスト色 - 濃いめのグレー（コントラスト確保） */
+  --md-default-fg-color: #2c2c2c;
+  --md-default-fg-color--light: #5a5a5a;
+  --md-default-fg-color--lighter: #7a7a7a;
+  --md-default-fg-color--lightest: #9a9a9a;
+
+  /* プライマリカラー - 落ち着いたブルー */
+  --md-primary-fg-color: #4a6fa5;
+  --md-primary-fg-color--light: #6a8fc5;
+  --md-primary-fg-color--dark: #3a5f95;
+
+  /* アクセントカラー - 温かみのあるコーラル */
+  --md-accent-fg-color: #d97757;
+  --md-accent-fg-color--transparent: rgba(217, 119, 87, 0.1);
+
+  /* コードブロック */
+  --md-code-bg-color: #edeae3;
+  --md-code-fg-color: #3d3d3d;
+
+  /* ボーダー */
+  --md-default-border-color: #ddd9d0;
+
+  /* シャドウ */
+  --md-shadow-z1: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05),
+                  0 0.1rem 0.1rem rgba(0, 0, 0, 0.025);
+  --md-shadow-z2: 0 0.2rem 1rem rgba(0, 0, 0, 0.1),
+                  0 0.1rem 0.2rem rgba(0, 0, 0, 0.05);
+  --md-shadow-z3: 0 0.5rem 2rem rgba(0, 0, 0, 0.15),
+                  0 0.2rem 0.5rem rgba(0, 0, 0, 0.075);
+}
+
+/* ----------------------------------------------------------------------------
+ * ダークモード - 深みのあるダークブルーグレー
+ * ---------------------------------------------------------------------------- */
+[data-md-color-scheme="slate"] {
+  /* 背景色 - ダークブルーグレー */
+  --md-default-bg-color: #1a1d23;
+  --md-default-bg-color--light: #21252b;
+  --md-default-bg-color--lighter: #282c34;
+  --md-default-bg-color--lightest: #2f333d;
+
+  /* テキスト色 - 柔らかいライトグレー */
+  --md-default-fg-color: #e8e8e6;
+  --md-default-fg-color--light: #c8c8c6;
+  --md-default-fg-color--lighter: #a8a8a6;
+  --md-default-fg-color--lightest: #888886;
+
+  /* プライマリカラー - 明るめのブルー */
+  --md-primary-fg-color: #7da3d8;
+  --md-primary-fg-color--light: #9dbdef;
+  --md-primary-fg-color--dark: #5d8bc8;
+
+  /* アクセントカラー - 鮮やかなコーラルピンク */
+  --md-accent-fg-color: #f19066;
+  --md-accent-fg-color--transparent: rgba(241, 144, 102, 0.1);
+
+  /* コードブロック */
+  --md-code-bg-color: #161820;
+  --md-code-fg-color: #e0e0de;
+
+  /* ボーダー */
+  --md-default-border-color: #2f333d;
+
+  /* シャドウ */
+  --md-shadow-z1: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3),
+                  0 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
+  --md-shadow-z2: 0 0.2rem 1rem rgba(0, 0, 0, 0.4),
+                  0 0.1rem 0.2rem rgba(0, 0, 0, 0.3);
+  --md-shadow-z3: 0 0.5rem 2rem rgba(0, 0, 0, 0.5),
+                  0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+/* ----------------------------------------------------------------------------
+ * 共通スタイリング - スムーズなトランジション
+ * ---------------------------------------------------------------------------- */
+:root {
+  /* カラー変更時のスムーズな遷移 */
+  color-scheme: light;
+}
+
+[data-md-color-scheme="slate"] {
+  color-scheme: dark;
+}
+
+/* 背景とテキストのトランジション */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* リンクホバー時のスムーズな変化 */
+a {
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+/* コードブロックのトランジション */
+pre, code {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
