@@ -1,10 +1,10 @@
 # Asaka Campus Portal
 
-東洋大学朝霞キャンパスポータル - 学生生活に必要な情報をまとめたドキュメントサイトです。
+東洋大学朝霞キャンパスポータル - 学生生活に必要な情報をまとめたドキュメントサイトです。  
 
 ## 🌐 サイト
 
-**https://yuhei-tsujimoto.github.io/asaka-portal/**
+**<https://yuhei-tsujimoto.github.io/asaka-portal/>**  
 
 ## 📚 コンテンツ
 
@@ -22,12 +22,12 @@
 
 ## 📖 セットアップ
 
-詳細は [SETUP.md](./SETUP.md) を参照してください。
+詳細は [SETUP.md](./SETUP.md) を参照してください。  
 
 ## 🚀 デプロイ
 
-GitHub Pagesへの自動デプロイの設定方法は [DEPLOY.md](./DEPLOY.md) を参照してください。
+GitHub Pagesへの自動デプロイの設定方法は [DEPLOY.md](./DEPLOY.md) を参照してください。  
 
 ## 📝 ライセンス
 
-Copyright &copy; 2025 Toyo University Asaka Administrative Office
+Copyright &copy; 2025 Toyo University Asaka Administrative Office  

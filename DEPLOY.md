@@ -1,6 +1,6 @@
 # GitHub Pages デプロイガイド
 
-このプロジェクトはGitHub Pagesで自動的に公開されます。
+このプロジェクトはGitHub Pagesで自動的に公開されます。  
 
 ## セットアップ手順
 
@@ -13,16 +13,16 @@
 
 ### 2. 自動デプロイ
 
-以下のいずれかの条件で自動的にデプロイされます：
+以下のいずれかの条件で自動的にデプロイされます：  
 
 - `main` または `master` ブランチにプッシュしたとき
 - GitHub Actionsのワークフローを手動で実行したとき（**Actions** タブから実行可能）
 
 ### 3. サイトのURL
 
-デプロイが完了すると、以下のURLでサイトにアクセスできます：
+デプロイが完了すると、以下のURLでサイトにアクセスできます：  
 
-**https://yuhei-tsujimoto.github.io/asaka-portal/**
+**<https://yuhei-tsujimoto.github.io/asaka-portal/>**  
 
 ## デプロイの確認
 
@@ -46,12 +46,12 @@
 
 ## ローカルでの確認
 
-デプロイ前にローカルで確認する場合：
+デプロイ前にローカルで確認する場合：  
 
-```bash
-source .venv/bin/activate
-zensical build
-zensical serve
-```
+```bash  
+source .venv/bin/activate  
+zensical build  
+zensical serve  
+```  
 
-ブラウザで `http://localhost:8000` にアクセスして確認できます。
+ブラウザで `http://localhost:8000` にアクセスして確認できます。  

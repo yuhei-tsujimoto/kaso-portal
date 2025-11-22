@@ -1,13 +1,13 @@
----
-layout: default
-title: 🔋 充電BOX
-parent: 施設・設備
-nav_order: 2
----
+---  
+layout: default  
+title: 🔋 充電BOX  
+parent: 施設・設備  
+nav_order: 2  
+---  
 
 # 充電BOX
 
-スマートフォンやタブレットを安全に充電できる設備です。
+スマートフォンやタブレットを安全に充電できる設備です。  
 
 ## 📍 設置場所
 
@@ -25,11 +25,11 @@ nav_order: 2
 
 ## 🕐 利用時間
 
-各施設の開館時間に準じます
+各施設の開館時間に準じます  
 
 ## 💰 利用料金
 
-無料
+無料  
 
 ## ⚠️ 注意事項
 
@@ -46,4 +46,4 @@ nav_order: 2
 - モバイルバッテリー
 - その他USB充電可能な機器
 
-各BOXにはUSB Type-A、Type-C、Lightningなどの主要な接続端子があります。
+各BOXにはUSB Type-A、Type-C、Lightningなどの主要な接続端子があります。  
