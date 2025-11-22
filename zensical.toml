@@ -110,3 +110,6 @@ generator = false
 # 追加のJavaScriptファイル
 [[project.extra_javascript]]
 path = "javascripts/header-link.js"
+
+[[project.extra_javascript]]
+path = "javascripts/mobile-toc.js"
