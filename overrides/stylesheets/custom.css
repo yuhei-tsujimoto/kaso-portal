@@ -113,3 +113,168 @@ a {
 pre, code {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* ----------------------------------------------------------------------------
+ * モバイル用フローティング目次ボタン
+ * ---------------------------------------------------------------------------- */
+
+/* フローティングボタン - モバイルのみ表示 */
+.mobile-toc-button {
+  display: none; /* Desktop では非表示 */
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: var(--md-primary-fg-color);
+  color: white;
+  border: none;
+  box-shadow: var(--md-shadow-z3);
+  cursor: pointer;
+  z-index: 90;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.mobile-toc-button:hover {
+  background-color: var(--md-primary-fg-color--dark);
+  transform: scale(1.05);
+}
+
+.mobile-toc-button:active {
+  transform: scale(0.95);
+}
+
+/* モバイルのみ表示 */
+@media screen and (max-width: 76.1875em) {
+  .mobile-toc-button {
+    display: flex;
+  }
+}
+
+/* バックドロップ */
+.mobile-toc-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 98;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-toc-backdrop.active {
+  display: block;
+  opacity: 1;
+}
+
+/* ドロワー */
+.mobile-toc-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 20rem;
+  height: 100%;
+  background-color: var(--md-default-bg-color);
+  box-shadow: var(--md-shadow-z3);
+  z-index: 99;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-toc-drawer.active {
+  transform: translateX(0);
+}
+
+/* ドロワーヘッダー */
+.mobile-toc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--md-default-border-color);
+  background-color: var(--md-default-bg-color--light);
+}
+
+.mobile-toc-header h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+
+.mobile-toc-close {
+  background: none;
+  border: none;
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mobile-toc-close:hover {
+  background-color: var(--md-default-bg-color--lighter);
+  color: var(--md-default-fg-color);
+}
+
+/* ナビゲーションリスト */
+.mobile-toc-nav {
+  flex: 1;
+  padding: 0.5rem 0;
+  overflow-y: auto;
+}
+
+.mobile-toc-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-toc-nav li {
+  margin: 0;
+}
+
+.mobile-toc-nav a {
+  display: block;
+  padding: 0.625rem 1.25rem;
+  color: var(--md-default-fg-color--light);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.mobile-toc-nav a:hover {
+  background-color: var(--md-default-bg-color--lighter);
+  color: var(--md-default-fg-color);
+  border-left-color: var(--md-accent-fg-color);
+}
+
+/* 見出しレベルのインデント */
+.mobile-toc-nav .toc-h2 a {
+  padding-left: 1.25rem;
+  font-weight: 500;
+  font-size: 0.9375rem;
+}
+
+.mobile-toc-nav .toc-h3 a {
+  padding-left: 2rem;
+  font-size: 0.875rem;
+}
+
+.mobile-toc-nav .toc-h4 a {
+  padding-left: 2.75rem;
+  font-size: 0.8125rem;
+}
