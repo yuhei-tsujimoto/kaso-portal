@@ -1,0 +1,57 @@
+name: Markdownlint Auto Fix
+
+on:
+  schedule:
+    - cron: '0 17 * * *'  # 毎日UTC 17:00 = JST 2:00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  lint-and-fix:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install markdownlint-cli
+        run: npm install -g markdownlint-cli
+
+      - name: Add trailing spaces for line breaks
+        run: |
+          find . -name '*.md' -type f -not -path './node_modules/*' -exec sed -i '
+            /^[[:space:]]*$/b
+            /^#/b
+            /^[[:space:]]*[-*+] /b
+            /^[[:space:]]*[0-9]\+\. /b
+            s/[[:space:]]*$/  /
+          ' {} \;
+
+      - name: Run markdownlint with auto-fix
+        run: |
+          echo "Markdown files found: $(find . -name '*.md' -type f | wc -l)"
+          find . -name '*.md' -type f -not -path './node_modules/*' -print0 | xargs -0 markdownlint --config .github/scripts/markdownlint-fix/.markdownlint.jsonc --fix || true
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "style: auto-fix markdown lint errors
+
+            🤖 Generated with GitHub Actions"
+            git push
+          fi
