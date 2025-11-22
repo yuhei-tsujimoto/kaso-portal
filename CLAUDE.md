@@ -47,7 +47,9 @@ zensical build --clean
 asaka-portal/
 ├── docs/                       # Content source (Markdown files)
 │   ├── index.md               # Homepage (with frontmatter)
+│   ├── 01_スケジュール/       # Schedule category (has index.md)
 │   ├── 02_履修-成績/          # Academic registration category
+│   ├── 03_学生生活/           # Student life category
 │   ├── 04_進路-キャリア/      # Career services category
 │   ├── 05_各種申請/           # Various applications category
 │   └── 06_施設・設備/         # Facilities category
@@ -61,6 +63,10 @@ asaka-portal/
 
 - **Content Location:** All documentation is in `docs/` as Markdown files
 - **Category Structure:** Numbered directories (e.g., `02_履修-成績/`) define content categories
+- **Category index.md Rules:**
+  - **01_スケジュール ONLY** has `index.md` (serves as the schedule homepage with embedded Google Calendar)
+  - **All other categories** (02, 03, 04, 05, 06) do NOT have `index.md` - they function as toggle-only navigation items
+  - Do NOT create `index.md` for categories other than 01_スケジュール
 - **Navigation:** Automatically generated from folder structure and frontmatter; manual nav configuration is commented out in `zensical.toml`
 - **Frontmatter:** Used in Markdown files for metadata (title, nav_order, layout)
 
