@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ホーム
+title: HOME
 nav_order: 0
 ---
 
