@@ -60,6 +60,9 @@ Copyright &copy; 2025 Toyo University Asaka Administrative Office
 # ----------------------------------------------------------------------------
 [project.theme]
 
+# カスタムテンプレートとアセットのディレクトリ
+custom_dir = "overrides"
+
 # Zensical は 60 以上の言語に対応しており、テンプレートが自動翻訳される
 language = "ja"
 
@@ -99,3 +102,7 @@ toggle.name = "ライトモードに切り替え"
 # カスタム設定
 [project.extra]
 generator = false
+
+# 追加のJavaScriptファイル
+[[project.extra_javascript]]
+path = "javascripts/header-link.js"

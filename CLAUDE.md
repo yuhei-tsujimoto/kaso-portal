@@ -108,6 +108,10 @@ Deployment happens automatically on push to main. To trigger manually:
   - Example: `## 📅 年間スケジュール` or `## 📝 申請方法`
   - Choose emojis that visually represent the section content
 
+- **Level 3 headings (`###`)**: Always prefix with a single relevant emoji at the beginning
+  - Example: `### 📅 更新時期` or `### 📝 申請方法`
+  - Choose emojis that visually represent the subsection content
+
 ### Modifying Site Configuration
 
 Edit `zensical.toml` for:
