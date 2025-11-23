@@ -26,6 +26,6 @@ nav_order: 0
 
 <div>
   <a href="https://docs.google.com/forms/d/e/1FAIpQLScqbYM3b8QhyO56oDZdHNoD4mLckP5jh3tBec4uB2h1N5DZLg/viewform" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 8px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 6px; font-size: 1em; transition: background-color 0.3s;">
-    📝 お問い合わせフォームへ
+    📝 お問い合わせフォーム
   </a>
 </div>
