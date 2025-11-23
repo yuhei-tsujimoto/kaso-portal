@@ -114,18 +114,29 @@ Deployment happens automatically on push to main. To trigger manually:
 
 ### Content Style Guidelines
 
-- **Page titles (`title` in frontmatter)**: Always prefix with a single relevant emoji at the beginning
+#### Heading Hierarchy
+
+- **Level 1 headings (`#`)**: Used for page titles only
+    - Defined in the `title` frontmatter field with a single relevant emoji at the beginning
     - Example: `title: 💼 アルバイト` or `title: 🌍 英語単位認定`
     - Choose emojis that visually represent the page content
-    - This appears in the navigation menu and page headers
+    - Appears in the navigation menu and page headers
+
+- **Level 2 headings (`##`)**: Major sections that broadly divide page content
+    - **Do NOT include emojis** - keep them clean and semantic
+    - Use for major conceptual divisions within a page
+    - Example: `## 申請手続き` or `## 利用方法`
+
+- **Level 3 headings (`###`)**: Standard subsection headings (most commonly used)
+    - Always prefix with a single relevant emoji at the beginning
+    - Example: `### 📅 更新時期` or `### 📝 申請方法`
+    - Choose emojis that visually represent the subsection content
+
+#### Additional Style Rules
 
 - **Menu category titles (`parent` in frontmatter)**: Do NOT include emojis
     - Example: `parent: 学生生活` or `parent: 履修・成績`
     - Keep category names clean and consistent across all categories
-
-- **Level 3 headings (`###`)**: Always prefix with a single relevant emoji at the beginning
-    - Example: `### 📅 更新時期` or `### 📝 申請方法`
-    - Choose emojis that visually represent the subsection content
 
 ### Modifying Site Configuration
 
