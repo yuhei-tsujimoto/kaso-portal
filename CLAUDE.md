@@ -1,162 +1,162 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.  
+このファイルは、このリポジトリでコードを扱う際ののガイダンスを提供します。
 
-## Project Overview
+## プロジェクト概要
 
-Asaka Campus Portal is a documentation website for Toyo University's Asaka Campus students. It's built with Zensical (a static site generator) and automatically deployed to GitHub Pages at <https://yuhei-tsujimoto.github.io/asaka-portal/>  
+朝霞キャンパスポータルは、東洋大学朝霞キャンパスの学生向けドキュメンテーションウェブサイトです。Zensical（静的サイトジェネレーター）で構築され、GitHub Pagesに自動デプロイされます。公開URL: <https://yuhei-tsujimoto.github.io/asaka-portal/>
 
-## Essential Commands
+## 基本コマンド
 
-### Development Environment Setup
+### 開発環境のセットアップ
 
-```bash  
-# Create and activate virtual environment
-python3 -m venv .venv  
-source .venv/bin/activate  
+```bash
+# 仮想環境の作成と有効化
+python3 -m venv .venv
+source .venv/bin/activate
 
-# Install dependencies
-pip install -r requirements.txt  
-```  
+# 依存関係のインストール
+pip install -r requirements.txt
+```
 
-### Development Workflow
+### 開発ワークフロー
 
-```bash  
-# Start development server (auto-reloads on changes)
-npm run dev  
-# or directly:
-source .venv/bin/activate && zensical serve  
-# Access at: http://localhost:8000
+```bash
+# 開発サーバーの起動（変更時に自動リロード）
+npm run dev
+# または直接実行:
+source .venv/bin/activate && zensical serve
+# アクセス先: http://localhost:8000
 
-# Build static site (outputs to site/ directory)
-npm run build  
-# or directly:
-source .venv/bin/activate && zensical build  
+# 静的サイトのビルド（site/ディレクトリに出力）
+npm run build
+# または直接実行:
+source .venv/bin/activate && zensical build
 
-# Build with clean output directory
-zensical build --clean  
-```  
+# クリーンビルド（出力ディレクトリをクリア）
+zensical build --clean
+```
 
-**Note:** Always activate the virtual environment before running Zensical commands. The npm scripts handle this automatically.  
+**注意:** Zensicalコマンドを実行する前に、必ず仮想環境を有効化してください。npmスクリプトは自動的にこれを処理します。
 
-## Architecture
+## アーキテクチャ
 
-### Project Structure
+### プロジェクト構造
 
 ```markdown
-asaka-portal/  
-├── docs/                       # Content source (Markdown files)  
-│   ├── index.md               # Homepage (with frontmatter)  
-│   ├── 01_スケジュール/       # Schedule category (has index.md)  
-│   ├── 02_履修-成績/          # Academic registration category  
-│   ├── 03_学生生活/           # Student life category  
-│   ├── 04_進路-キャリア/      # Career services category  
-│   ├── 05_各種申請/           # Various applications category  
-│   └── 06_施設・設備/         # Facilities category  
-├── site/                       # Build output (generated, not in git)  
-├── .venv/                      # Python virtual environment (not in git)  
-├── zensical.toml              # Zensical configuration  
-└── requirements.txt           # Python dependencies  
-```  
+asaka-portal/
+├── docs/                       # コンテンツソース（Markdownファイル）
+│   ├── index.md               # ホームページ（frontmatter付き）
+│   ├── 01_スケジュール/       # スケジュールカテゴリ（index.mdあり）
+│   ├── 02_履修-成績/          # 履修・成績カテゴリ
+│   ├── 03_学生生活/           # 学生生活カテゴリ
+│   ├── 04_進路-キャリア/      # 進路・キャリアカテゴリ
+│   ├── 05_各種申請/           # 各種申請カテゴリ
+│   └── 06_施設・設備/         # 施設・設備カテゴリ
+├── site/                       # ビルド出力（自動生成、gitには含まれない）
+├── .venv/                      # Python仮想環境（gitには含まれない）
+├── zensical.toml              # Zensical設定ファイル
+└── requirements.txt           # Python依存関係
+```
 
-### Content Organization
+### コンテンツ構成
 
-- **Content Location:** All documentation is in `docs/` as Markdown files
-- **Category Structure:** Numbered directories (e.g., `02_履修-成績/`) define content categories
-- **Category index.md Rules:**
-    - **01_スケジュール ONLY** has `index.md` (serves as the schedule homepage with embedded Google Calendar)
-    - **All other categories** (02, 03, 04, 05, 06) do NOT have `index.md` - they function as toggle-only navigation items
-    - Do NOT create `index.md` for categories other than 01_スケジュール
-- **Navigation:** Automatically generated from folder structure and frontmatter; manual nav configuration is commented out in `zensical.toml`
-- **Frontmatter:** Used in Markdown files for metadata (title, nav_order, layout)
+- **コンテンツの場所:** すべてのドキュメントは`docs/`内にMarkdownファイルとして配置
+- **カテゴリ構造:** 番号付きディレクトリ（例: `02_履修-成績/`）がコンテンツカテゴリを定義
+- **カテゴリのindex.md規則:**
+    - **01_スケジュールのみ** `index.md`を持つ（Googleカレンダーが埋め込まれたスケジュールホームページとして機能）
+    - **その他のすべてのカテゴリ**（02, 03, 04, 05, 06）は`index.md`を持たない - トグル専用のナビゲーション項目として機能
+    - 01_スケジュール以外のカテゴリに`index.md`を作成しないこと
+- **ナビゲーション:** フォルダ構造とfrontmatterから自動生成。手動ナビゲーション設定は`zensical.toml`でコメントアウト済み
+- **Frontmatter:** Markdownファイルでメタデータ（title、nav_order、layout）に使用
 
-### Zensical Configuration
+### Zensical設定
 
-The site is configured via `zensical.toml`:  
+サイトは`zensical.toml`で設定されます:
 
-- **Site metadata:** name, description, author, URL, copyright
-- **Language:** Japanese (`ja`)
-- **Theme features:** Includes navigation, search, code highlighting, dark/light mode toggle
-- **Navigation:** Auto-generated from file structure (manual nav config is commented out)
+- **サイトメタデータ:** 名前、説明、著者、URL、著作権
+- **言語:** 日本語（`ja`）
+- **テーマ機能:** ナビゲーション、検索、コードハイライト、ダーク/ライトモード切替を含む
+- **ナビゲーション:** ファイル構造から自動生成（手動ナビゲーション設定はコメントアウト済み）
 
-Key enabled features:  
+有効化されている主な機能:
 
-- Full-text search with highlighting (`search.highlight`)
-- Instant navigation with prefetch
-- Code copy buttons and annotations
-- Dark/light mode toggle with custom icons
+- ハイライト付き全文検索（`search.highlight`）
+- プリフェッチによる高速ナビゲーション
+- コードのコピーボタンと注釈
+- カスタムアイコン付きダーク/ライトモード切替
 
-## Deployment
+## デプロイ
 
-### GitHub Actions Workflow
+### GitHub Actionsワークフロー
 
-Located at `.github/workflows/docs.yml`:  
+場所: `.github/workflows/docs.yml`
 
-- **Triggers:** Push to `main`/`master` branch, or manual workflow dispatch
-- **Process:** Install Python deps → `zensical build --clean` → Deploy to GitHub Pages
-- **Output:** Deployed to `github-pages` environment
+- **トリガー:** `main`/`master`ブランチへのプッシュ、または手動ワークフロー実行
+- **処理:** Python依存関係のインストール → `zensical build --clean` → GitHub Pagesへデプロイ
+- **出力:** `github-pages`環境にデプロイ
 
-### Manual Deployment
+### 手動デプロイ
 
-Deployment happens automatically on push to main. To trigger manually:  
+デプロイはmainブランチへのプッシュで自動実行されます。手動でトリガーするには:
 
-1. Go to GitHub Actions tab
-2. Select "Documentation" workflow
-3. Click "Run workflow"
+1. GitHub Actionsタブに移動
+2. 「Documentation」ワークフローを選択
+3. 「Run workflow」をクリック
 
-## Content Development
+## コンテンツ開発
 
-### Adding New Pages
+### 新規ページの追加
 
-1. Create a Markdown file in the appropriate category directory under `docs/`
-2. Add frontmatter with title and nav_order if needed
-3. Zensical will automatically include it in the navigation
+1. `docs/`配下の適切なカテゴリディレクトリにMarkdownファイルを作成
+2. 必要に応じてtitleやnav_orderを含むfrontmatterを追加
+3. Zensicalが自動的にナビゲーションに含める
 
-### Content Style Guidelines
+### コンテンツスタイルガイドライン
 
-#### Heading Hierarchy
+#### 見出し階層
 
-- **Level 1 headings (`#`)**: Used for page titles only
-    - Defined in the `title` frontmatter field with a single relevant emoji at the beginning
-    - Example: `title: 💼 アルバイト` or `title: 🌍 英語単位認定`
-    - Choose emojis that visually represent the page content
-    - Appears in the navigation menu and page headers
+- **レベル1見出し（`#`）**: ページタイトル専用
+    - `title` frontmatterフィールドで定義し、先頭に関連する絵文字を1つ付ける
+    - 例: `title: 💼 アルバイト` または `title: 🌍 英語単位認定`
+    - ページ内容を視覚的に表す絵文字を選択
+    - ナビゲーションメニューとページヘッダーに表示される
 
-- **Level 2 headings (`##`)**: Major sections that broadly divide page content
-    - **Do NOT include emojis** - keep them clean and semantic
-    - Use for major conceptual divisions within a page
-    - Example: `## 申請手続き` or `## 利用方法`
+- **レベル2見出し（`##`）**: ページコンテンツを大きく分割する主要セクション
+    - **絵文字を含めない** - クリーンで意味的に保つ
+    - ページ内の主要な概念的区分に使用
+    - 例: `## 申請手続き` または `## 利用方法`
 
-- **Level 3 headings (`###`)**: Standard subsection headings (most commonly used)
-    - Always prefix with a single relevant emoji at the beginning
-    - Example: `### 📅 更新時期` or `### 📝 申請方法`
-    - Choose emojis that visually represent the subsection content
+- **レベル3見出し（`###`）**: 標準的なサブセクション見出し（最も一般的に使用）
+    - 常に先頭に関連する絵文字を1つ付ける
+    - 例: `### 📅 更新時期` または `### 📝 申請方法`
+    - サブセクション内容を視覚的に表す絵文字を選択
 
-#### Additional Style Rules
+#### その他のスタイル規則
 
-- **Menu category titles (`parent` in frontmatter)**: Do NOT include emojis
-    - Example: `parent: 学生生活` or `parent: 履修・成績`
-    - Keep category names clean and consistent across all categories
+- **メニューカテゴリタイトル（frontmatterの`parent`）**: 絵文字を含めない
+    - 例: `parent: 学生生活` または `parent: 履修・成績`
+    - すべてのカテゴリでカテゴリ名をクリーンかつ一貫して保つ
 
-### Modifying Site Configuration
+### サイト設定の変更
 
-Edit `zensical.toml` for:  
+`zensical.toml`を編集して以下を変更:
 
-- Site metadata (name, description, URL)
-- Theme features (navigation, search, etc.)
-- Color scheme options
-- Custom navigation structure (currently auto-generated)
+- サイトメタデータ（名前、説明、URL）
+- テーマ機能（ナビゲーション、検索など）
+- カラースキームオプション
+- カスタムナビゲーション構造（現在は自動生成）
 
-### Search Functionality
+### 検索機能
 
-The site features full-text search as a primary way for users to find information. The homepage emphasizes this feature prominently. When adding content, use clear, searchable keywords to improve discoverability.  
+サイトは、ユーザーが情報を見つけるための主要な方法として全文検索機能を備えています。ホームページではこの機能を目立つように強調しています。コンテンツを追加する際は、見つけやすさを向上させるため、明確で検索可能なキーワードを使用してください。
 
-## Dependencies
+## 依存関係
 
-- **Zensical:** 0.0.9 (static site generator)
-- **Python:** 3.x required
-- **Key Python packages:** markdown, pygments, pymdown-extensions (see `requirements.txt`)
+- **Zensical:** 0.0.9（静的サイトジェネレーター）
+- **Python:** 3.x必須
+- **主要なPythonパッケージ:** markdown、pygments、pymdown-extensions（`requirements.txt`を参照）
 
-## Deployment URL
+## デプロイURL
 
-Production site: <https://yuhei-tsujimoto.github.io/asaka-portal/>  
+本番サイト: <https://yuhei-tsujimoto.github.io/asaka-portal/>  
