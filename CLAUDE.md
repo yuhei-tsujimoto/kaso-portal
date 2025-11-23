@@ -43,7 +43,7 @@ zensical build --clean
 
 ### Project Structure
 
-```  
+```markdown
 asaka-portal/  
 ├── docs/                       # Content source (Markdown files)  
 │   ├── index.md               # Homepage (with frontmatter)  
