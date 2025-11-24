@@ -40,7 +40,7 @@ jobs:
       - name: Run markdownlint with auto-fix
         run: |
           echo "Markdown files found: $(find . -name '*.md' -type f | wc -l)"
-          find . -name '*.md' -type f -not -path './node_modules/*' -print0 | xargs -0 markdownlint --config .github/scripts/markdownlint-fix/.markdownlint.jsonc --fix || true
+          find . -name '*.md' -type f -not -path './node_modules/*' -print0 | xargs -0 markdownlint --config .markdownlint.jsonc --fix || true
 
       - name: Commit and push changes
         run: |
