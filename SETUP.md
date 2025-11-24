@@ -59,17 +59,14 @@ npm run build
 ```  
 asaka-portal/  
 ├── docs/                    # ドキュメントソース（Markdownファイル）  
-│   ├── 01_スケジュール/  
-│   ├── 02_履修-成績/  
-│   ├── 03_学生生活/  
-│   ├── 04_進路-キャリア/  
-│   └── 05_各種申請/  
 ├── site/                    # ビルド出力（生成される）  
 ├── .venv/                   # Python仮想環境  
 ├── zensical.toml           # Zensical設定ファイル  
 ├── requirements.txt        # Python依存関係  
 └── package.json            # npmスクリプト  
-```  
+```
+
+実際のコンテンツ構成は`docs/`ディレクトリと`zensical.toml`の`nav`セクションを参照してください。  
 
 ## 設定のカスタマイズ
 
