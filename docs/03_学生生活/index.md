@@ -1,3 +1,5 @@
+# 学生生活
+
 朝霞キャンパスでの学生生活に関する詳細な情報は、以下の公式サイトをご確認ください。
 
 **📌 [学生生活・学生支援 サイト](https://sites.google.com/toyo.jp/lsfns/%E5%AD%A6%E7%94%9F%E7%94%9F%E6%B4%BB%E3%82%AD%E3%83%A3%E3%83%AA%E3%82%A2/asakags?authuser=0)**
