@@ -1,8 +1,3 @@
----
-layout: default
-has_children: true
----
-
 年間行事予定や授業日程などを確認できます。
 
 ## 個別のカレンダー

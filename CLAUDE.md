@@ -57,7 +57,7 @@ asaka-portal/
 - **コンテンツの場所:** すべてのドキュメントは`docs/`内にMarkdownファイルとして配置
 - **カテゴリ構造:** 番号付きディレクトリがコンテンツカテゴリを定義（実際の構成は`docs/`ディレクトリを参照）
 - **ナビゲーション:** `zensical.toml`で手動設定（実際の構成は`zensical.toml`の`nav`セクションを参照）
-- **Frontmatter:** Markdownファイルでメタデータ（title、nav_order、layout）に使用
+- **Frontmatter:** 不要（Zensicalがファイル名とディレクトリ構造から自動的にサイトを生成）
 
 ### Zensical設定
 
@@ -99,19 +99,18 @@ asaka-portal/
 
 1. `docs/`配下の適切なカテゴリディレクトリにMarkdownファイルを作成
     - ファイル名に番号プレフィックスを付けて順序を制御（例：`01_ファイル名.md`）
-2. 必要最小限のfrontmatterを追加
-
-    ```yaml
-    ---
-    layout: default
-    parent: カテゴリ名
-    ---
-    ```
-
+2. **Frontmatterは不要**（Zensicalはデフォルト設定で動作します）
 3. 見出し2（`##`）からコンテンツを開始
 4. Zensicalが自動的にナビゲーションに含める
 
 ### コンテンツスタイルガイドライン
+
+#### Frontmatter（YAMLメタデータ）
+
+- **Frontmatterは使用しない**
+    - Zensicalはfrontmatterなしでも正しく動作する
+    - `layout:`, `parent:`, `nav_order:`, `has_children:`などのメタデータは不要
+    - ファイル名とディレクトリ構造から自動的にサイト構造を生成
 
 #### ファイル名とナビゲーション順序
 
