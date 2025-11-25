@@ -33,8 +33,19 @@ jobs:
       
       - name: Add site_url for production
         run: |
-          sed -i '/^# サイトの正規 URL/a\
-site_url = "https://yuhei-tsujimoto.github.io/asaka-portal/"' zensical.toml
+          python3 -c "
+          import re
+          with open('zensical.toml', 'r', encoding='utf-8') as f:
+              content = f.read()
+          content = re.sub(
+              r'(^# サイトの正規 URL.*)',
+              r'\1\nsite_url = \"https://yuhei-tsujimoto.github.io/asaka-portal/\"',
+              content,
+              flags=re.MULTILINE
+          )
+          with open('zensical.toml', 'w', encoding='utf-8') as f:
+              f.write(content)
+          "
       
       - name: Build site
         run: |
