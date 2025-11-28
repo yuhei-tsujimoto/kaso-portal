@@ -1,6 +1,6 @@
 # Asaka Campus Portal
 
-東洋大学朝霞キャンパスポータル - 学生生活に必要な情報をまとめたドキュメントサイトです。  
+仮想大学仮想キャンパスポータル - 学生生活に必要な情報をまとめたドキュメントサイトです。  
 
 ## 🌐 サイト
 
@@ -26,4 +26,4 @@ GitHub Pagesへの自動デプロイの設定方法は [DEPLOY.md](./DEPLOY.md) 
 
 ## 📝 ライセンス
 
-Copyright &copy; 2025 Toyo University Asaka Administrative Office  
+Copyright &copy; 2025 Virtual University Virtual Campus Administrative Office  

@@ -8,16 +8,16 @@
 site_name = "Asaka Campus Portal"
 
 # サイト説明（HTML の head に含まれ、検索エンジンが表示）
-site_description = "東洋大学朝霞キャンパスの学生向けポータルサイト - 学生生活に必要な情報をまとめています"
+site_description = "仮想大学仮想キャンパスの学生向けポータルサイト - 学生生活に必要な情報をまとめています"
 
 # サイトの作成者（HTML の head タグで使用）
-site_author = "Toyo University Asaka Administrative Office"
+site_author = "Virtual University Virtual Campus Administrative Office"
 
 # サイトの正規 URL（本番環境でのみ設定、GitHub Actionsで自動追加）
 
 # 著作権表記（ページフッターに表示、HTML フラグメント対応）
 copyright = """
-Copyright &copy; 2025 Toyo University Asaka Administrative Office
+Copyright &copy; 2025 Virtual University Virtual Campus Administrative Office
 """
 
 # ナビゲーション構造（自動生成）

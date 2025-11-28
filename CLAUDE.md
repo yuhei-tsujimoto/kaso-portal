@@ -4,7 +4,7 @@
 
 ## プロジェクト概要
 
-朝霞キャンパスポータルは、東洋大学朝霞キャンパスの学生向けドキュメンテーションウェブサイトです。Zensical（静的サイトジェネレーター）で構築され、GitHub Pagesに自動デプロイされます。公開URL: <https://yuhei-tsujimoto.github.io/asaka-portal/>  
+仮想キャンパスポータルは、仮想大学仮想キャンパスの学生向けドキュメンテーションウェブサイトです。Zensical（静的サイトジェネレーター）で構築され、GitHub Pagesに自動デプロイされます。公開URL: <https://yuhei-tsujimoto.github.io/asaka-portal/>  
 
 ## 基本コマンド
 

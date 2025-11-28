@@ -1,7 +1,7 @@
 {
   "name": "asaka-portal",
   "version": "1.0.0",
-  "description": "朝霞キャンパス ポータルサイト",
+  "description": "仮想キャンパス ポータルサイト",
   "scripts": {
     "build": "source .venv/bin/activate && zensical build",
     "dev": "source .venv/bin/activate && zensical serve",
