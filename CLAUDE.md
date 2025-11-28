@@ -4,7 +4,7 @@
 
 ## プロジェクト概要
 
-仮想キャンパスポータルは、仮想大学仮想キャンパスの学生向けドキュメンテーションウェブサイトです。Zensical（静的サイトジェネレーター）で構築され、GitHub Pagesに自動デプロイされます。公開URL: <https://yuhei-tsujimoto.github.io/kaso-portal/>
+仮想キャンパスポータルは、仮想大学仮想キャンパスの学生向けドキュメンテーションウェブサイトです。Zensical（静的サイトジェネレーター）で構築され、GitHub Pagesに自動デプロイされます。公開URL: <https://yuhei-tsujimoto.github.io/kaso-portal/>  
 
 ## 基本コマンド
 
